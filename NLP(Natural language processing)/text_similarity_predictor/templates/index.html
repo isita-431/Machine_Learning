@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
+    <style>
+      body {
+        background-image: linear-gradient(
+          90deg,
+          rgba(155, 152, 191, 1) 1%,
+          rgba(0, 255, 252, 1) 100%,
+          rgba(9, 121, 118, 1) 100%
+        );
+      }
+      input {
+        color: black;
+        text-shadow: none;
+        background: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login">
+      <h1 style="color: black">Text similarity predictor</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <input
+          type="text"
+          name="text1"
+          placeholder="text 1 input"
+          required="required"
+        />
+        <input
+          type="text"
+          name="text2"
+          placeholder="text 2 input "
+          required="required"
+        />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+      {{ prediction_text }}
+    </div>
+  </body>
+</html>
