@@ -1,4 +1,6 @@
-This is a text similarity predictor app. The user will require to give two inputs , text 1 and text 2. The text similarity predictor will predict the simarity between the sentences and give a float number as output which is the similarity score.
+This is a text similarity predictor app. The user will require to give two inputs , text 1 and text 2.
+The text similarity predictor will predict the simarity between the sentences and give a float number as output which 
+is the similarity score.
 
 to run and deploy follow the steps:
 1. run app.py, flask module is used for deployment. after running app.py , in the terminal it'll give us a link to the website. 
