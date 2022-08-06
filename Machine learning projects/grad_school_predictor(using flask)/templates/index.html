@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
+    <style>
+      body {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(138, 140, 145, 0.8),
+            rgba(20, 36, 77, 0.8)
+          ),
+          url("https://media.architecturaldigest.com/photos/5da74823d599ec0008227ea8/16:9/w_2560%2Cc_limit/GettyImages-946087016.jpg");
+      }
+      input {
+        color: black;
+        text-shadow: none;
+        background: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Grad school Predictor</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <input
+          type="text"
+          name="GRE"
+          placeholder="GRE SCORE"
+          required="required"
+        />
+        <input
+          type="text"
+          name="Toefl"
+          placeholder="TOEFL SCORE"
+          required="required"
+        />
+        <input
+          type="text"
+          name="University Rating"
+          placeholder="University Rating"
+          required="required"
+        />
+        <input type="text" name="SOP" placeholder="SOP" required="required" />
+        <input type="text" name="LOR" placeholder="LOR" required="required" />
+        <input type="text" name="cgpa" placeholder="CGPA" required="required" />
+        <input
+          type="text"
+          name="RESEARCH"
+          placeholder="RESEARCH"
+          required="required"
+        />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+      {{ prediction_text }}
+    </div>
+  </body>
+</html>
