@@ -1,4 +1,5 @@
-# ML X Data Science
+#  Data Science Project
+Film recommendation sysyem using streamlit
 
 ## How to run it on your system
 1. Clone this repository 
